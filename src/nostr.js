@@ -132,7 +132,7 @@ export const listenForZapReceipt = ({ relays, invoice, onSuccess }) => {
 
     sub.on("event", (event) => {
       if (event.tags.find((t) => t[0] === "bolt11" && t[1] === invoice)) {
-        onSuccess();
+        onSuccess(event);
         closePool();
         clearInterval(intervalId);
       }

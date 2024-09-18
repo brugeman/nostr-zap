@@ -114,8 +114,9 @@ const renderInvoiceDialog = ({ dialogHeader, invoice, relays, buttonColor }) => 
   const closePool = listenForZapReceipt({
     relays,
     invoice,
-    onSuccess: () => {
+    onSuccess: (event) => {
       invoiceDialog.close();
+      document.dispatchEvent(new CustomEvent("nostr-zap-published", { detail: event }));
     },
   });
 

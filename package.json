@@ -37,6 +37,6 @@
   },
   "dependencies": {
     "easyqrcodejs": "^4.4.13",
-    "nostr-tools": "^1.10.1"
+    "nostr-tools": "^1.17.0"
   }
 }
